@@ -10,29 +10,30 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		// Instanciando a Classe
-		Product product = new Product();
 		
 		// Mensagem para o usuário
 		System.out.println("=== INSTRUMENTOS MUSICAIS ===");
 		
 		// Armazenando informacoes do produto
 		System.out.println("Nome: ");
-		product.name = sc.nextLine();
+		String name = sc.nextLine();
 		
 		System.out.println("Preco: R$ ");
-		product.price = sc.nextDouble();
+		double price = sc.nextDouble();
 		
 		System.out.println("Quantidade em Estoque: ");
-		product.quantity = sc.nextInt();
+		int quantity = sc.nextInt();
 		
-		 System.out.println("~=".repeat(40));
+		// Instanciando a Classe
+		Product product = new Product(name, price, quantity);
+		
+		System.out.println("~=".repeat(40));
 		
 		System.out.println("==Estoque: " + product);
 		System.out.println("~=".repeat(40));
 		
 		System.out.print("Quantidade para adicionar ao produto: ");
-		int quantity = sc.nextInt();
+		quantity = sc.nextInt();
 		product.addProducts(quantity);
 		
 		System.out.println("~=".repeat(40));
